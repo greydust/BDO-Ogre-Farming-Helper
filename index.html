@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>BDO Ogre Farming Helper by greydust</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="static/css/common.css" media="screen">
+    </head>
+    <body>
+        <table>
+            <td>
+                <div id="mapContainer">
+                    <img id="mapImage" src="static/images/Ogre.png" usemap="#ogreClickMap"/>
+                    <canvas id="mapCanvas" width="759" height="881">
+                    </canvas>
+                </div>
+            </td>
+            <td style="vertical-align: top;">
+                <div id="informationContainer">
+                </div>
+                <div id="controlArea">
+                    <button type="button" onclick="ResetOgre()">Reset</button>
+                </div>
+            </td>
+        </table>
+    </body>
+</html>
+<script src="static/js/OgreMap.js"></script>

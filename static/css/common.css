@@ -1,0 +1,26 @@
+#mapImage {
+    position:absolute;
+    z-index:1;
+}
+
+#mapContainer {
+    display:inline-block;
+    width:759px; 
+    height:881px;
+    margin: 0 auto; 
+    position:relative; 
+}
+
+#mapCanvas {
+    position:relative;
+    z-index:20;
+}
+
+#informationContainer {
+    vertical-align: top;
+}
+
+#controlArea {
+    vertical-align: top;
+    margin-top: 10px;
+}
