@@ -63,7 +63,7 @@ canvas.onclick = function(e) {
     var y = e.clientY - rect.top;
     
     for (p in OgreSpawnPoints) {
-        if ((OgreSpawnPoints[p].x-x)*(OgreSpawnPoints[p].x-x) + (OgreSpawnPoints[p].y-y)*(OgreSpawnPoints[p].y-y) < 900) {
+        if ((OgreSpawnPoints[p].x-x)*(OgreSpawnPoints[p].x-x) + (OgreSpawnPoints[p].y-y)*(OgreSpawnPoints[p].y-y) < 1600) {
             KillOgre(p);
             break;
         }
@@ -85,7 +85,7 @@ function DrawOgreMap() {
         context.fillText(p, OgreSpawnPoints[p].x-14, OgreSpawnPoints[p].y+17);
         context.strokeStyle = OgreDrawColor[status];
         context.beginPath();
-        context.arc(OgreSpawnPoints[p].x, OgreSpawnPoints[p].y, 30, 0, 2*Math.PI);
+        context.arc(OgreSpawnPoints[p].x, OgreSpawnPoints[p].y, 40, 0, 2*Math.PI);
         context.stroke();
         
     }
