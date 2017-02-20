@@ -18,7 +18,7 @@ var OgreSpawnPoints = [
 
 var OgreDeadTime = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1];
 var warningTimeBeforeRespawn = 60;
-var OgreDrawColor = ["red", "gray", "yellow", "green", "blue"];
+var OgreDrawColor = ["red", "gray", "yellow", "orange", "red"];
 
 // Parameters:
 //    deadTime: input dead time
@@ -85,7 +85,12 @@ function DrawOgreMap() {
         context.fillText(p, OgreSpawnPoints[p].x-14, OgreSpawnPoints[p].y+17);
         context.strokeStyle = OgreDrawColor[status];
         context.beginPath();
-        context.arc(OgreSpawnPoints[p].x, OgreSpawnPoints[p].y, 40, 0, 2*Math.PI);
+        if (status == 1 || status == 2) {
+            var delta = Date.now() - OgreDeadTime[p];
+            context.arc(OgreSpawnPoints[p].x, OgreSpawnPoints[p].y, 40, -Math.PI*0.5, -Math.PI*0.5+2*Math.PI*(parseFloat(delta)/600000.0));
+        } else {
+            context.arc(OgreSpawnPoints[p].x, OgreSpawnPoints[p].y, 40, 0, 2*Math.PI);
+        }
         context.stroke();
         
     }
