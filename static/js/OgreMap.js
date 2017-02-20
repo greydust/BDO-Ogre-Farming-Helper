@@ -18,7 +18,7 @@ var OgreSpawnPoints = [
 
 var OgreDeadTime = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1];
 var warningTimeBeforeRespawn = 60;
-var OgreDrawColor = ["red", "gray", "yellow", "orange", "red"];
+var OgreDrawColor = ["red", "gray", "yellow", "orange", "blue"];
 
 // Parameters:
 //    deadTime: input dead time
