@@ -18,6 +18,7 @@
 
 #informationContainer {
     vertical-align: top;
+    min-width: 200px;
 }
 
 #controlArea {

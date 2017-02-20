@@ -52,6 +52,9 @@ function CheckOgreStatus(deadTime) {
 
 var canvas = document.getElementById("mapCanvas");
 var context = canvas.getContext("2d");
+context.font = "bold 48px Arial";
+context.lineWidth = 10;
+
 var info = document.getElementById("informationContainer");
 
 canvas.onclick = function(e) {
@@ -75,12 +78,11 @@ function RefreshOgreInformation() {
 
 function DrawOgreMap() {
     context.clearRect(0, 0, canvas.width, canvas.height);    
-    context.font = "32px Arial";
     
     for (p in OgreSpawnPoints) {
         var status = CheckOgreStatus(OgreDeadTime[p]);
         context.fillStyle = OgreDrawColor[status];
-        context.fillText(p, OgreSpawnPoints[p].x-9, OgreSpawnPoints[p].y+11);
+        context.fillText(p, OgreSpawnPoints[p].x-14, OgreSpawnPoints[p].y+17);
         context.strokeStyle = OgreDrawColor[status];
         context.beginPath();
         context.arc(OgreSpawnPoints[p].x, OgreSpawnPoints[p].y, 30, 0, 2*Math.PI);
@@ -91,14 +93,12 @@ function DrawOgreMap() {
 
 function MsToTime(t) {
     var seconds = parseInt((t/1000)%60)
-    var minutes = parseInt((t/(1000*60))%60)
-    var hours = parseInt((t/(1000*60*60))%24);
+    var minutes = parseInt(t/(1000*60))
     
-    hours = (hours < 10) ? "0" + hours : hours;
     minutes = (minutes < 10) ? "0" + minutes : minutes;
     seconds = (seconds < 10) ? "0" + seconds : seconds;
 
-    return hours + ":" + minutes + ":" + seconds;
+    return minutes + ":" + seconds;
 }
 
 function SetOgreMessage() {
